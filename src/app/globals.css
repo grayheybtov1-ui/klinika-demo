@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  STRICT MEDICAL DESIGN SYSTEM RULES:
+  - Absolute zero border-radius everywhere
+  - No glassmorphism
+  - No synthetic 3D or floating bubbles
+  - Clean architectural grid lines, high-contrast crisp clinic lines
+*/
+
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
+
+:root {
+  --color-primary: #0A1E3B;
+  --color-primary-light: #F0F6FB;
+  --color-accent: #0066B3;
+  --color-accent-hover: #004D85;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-border: #E2E8F0;
+  --color-bg-subtle: #F8FAFC;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  color: var(--color-text-main);
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom sharp scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
+}
+
+/* Hairline clinical grid background */
+.clinical-grid-pattern {
+  background-image: linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Focus styles - strictly sharp */
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: 2px solid #0066B3 !important;
+  outline-offset: 1px !important;
+}
